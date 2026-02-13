@@ -8,6 +8,7 @@ services:
     - TS_STATE_DIR=/var/lib/tailscale
     - TS_USERSPACE=true
     - TS_AUTHKEY=${TS_AUTHKEY}
+    - TS_EXTRA_ARGS=--port 41641
     command:
     - /usr/local/bin/containerboot
     restart: always
