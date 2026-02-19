@@ -59,3 +59,18 @@ services:
     - SYS_RESOURCE
     - SYS_TIME
     - SYS_TTY_CONFIG
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: always
+    network_mode: host
+    depends_on:
+      - tailscale_tailscale
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy_data:/data
+      - ./caddy_config:/config
+      - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock
+    environment:
+      - TZ=Asia/Shanghai
