@@ -1,0 +1,25 @@
+{
+    # Global options
+    admin off
+    log {
+        output stdout
+        level INFO
+    }
+}
+
+# Example reverse proxy configuration
+# Replace 'your-service.local' with your actual service name
+# Replace '3000' with your actual service port
+
+# your-service.local {
+#     reverse_proxy localhost:3000
+# }
+
+# Example static file server
+# Replace 'example.com' with your domain
+# Replace '/path/to/your/files' with your actual file path
+
+# example.com {
+#     root * /path/to/your/files
+#     file_server
+# }
